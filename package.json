@@ -1,21 +1,32 @@
 {
-  "name": "vscode-open-in-file-manager",
-  "displayName": "vscode-open-in-file-manager",
-  "description": "",
+  "name": "open-in-file-manager",
+  "displayName": "Open in File Manager",
+  "description": "Add a button to open file manager(finder, file explorer) on the status bar",
   "version": "0.0.1",
+  "author": "Bruce Yu <bruceyuhongbo@gmail.com>",
+  "publisher": "bruceyuhb",
+  "homepage": "https://github.com/13ruceYu/vscode-open-in-file-manager#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/13ruceYu/vscode-open-in-file-manager"
+  },
+  "icon": "res/icon.png",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-open-in-file-manager.helloWorld",
-        "title": "Hello World"
+        "command": "extension.openInFileManager",
+        "title": "Open in File Manager"
       }
     ]
   },
