@@ -14,6 +14,7 @@ function getFileManagerName() {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+  const activeEditor = vscode.window.activeTextEditor;
   const fileManagerName = getFileManagerName();
 
   const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0);
@@ -24,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(statusBarItem);
 
-  const revealCommand = vscode.commands.registerCommand("extension.revealWorkspaceInFileManager", () => {
+  const openWorkspace = vscode.commands.registerCommand("extension.revealWorkspaceInFileManager", () => {
     const workspaceFolders = vscode.workspace.workspaceFolders;
 
     if (!workspaceFolders || workspaceFolders.length === 0) {
@@ -45,7 +46,31 @@ export function activate(context: vscode.ExtensionContext) {
     );
   });
 
-  context.subscriptions.push(revealCommand);
+  context.subscriptions.push(openWorkspace);
+
+  let fileUri: vscode.Uri | undefined;
+
+  vscode.window.onDidChangeActiveTextEditor((editor) => {
+    if (editor) {
+      fileUri = editor.document.uri;
+    }
+  });
+
+  const openFile = vscode.commands.registerCommand('extension.openFileInFileManager', () => {
+    if (activeEditor) {
+      vscode.commands.executeCommand('revealFileInOS', fileUri).then(
+        () => {
+          console.log("Revealed file");
+        },
+        (err) => {
+          console.error("Failed to reveal file", err);
+          vscode.window.showErrorMessage("Failed to reveal file.");
+        }
+      );
+    }
+  });
+
+  context.subscriptions.push(openFile);
 }
 
 export function deactivate() { }

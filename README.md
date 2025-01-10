@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-Add a button to open file manager (finder, file explorer) on the status bar.
+Add a button to open file manager (finder, file explorer) on the status bar and editor toolbar.
 </p>
 
 <p align="center">
@@ -16,6 +16,10 @@ Add a button to open file manager (finder, file explorer) on the status bar.
 
 <p align="center">
 <img src="https://github.com/13ruceYu/vscode-open-in-file-manager/blob/main/res/demo.gif?raw=true" alt="demo">
+</p>
+
+<p align="center">
+<img src="https://github.com/13ruceYu/vscode-open-in-file-manager/blob/main/res/demo2.gif?raw=true" alt="demo">
 </p>
 
 **Enjoy!**

@@ -26,9 +26,22 @@
     "commands": [
       {
         "command": "extension.openInFileManager",
-        "title": "Open in File Manager"
+        "title": "Open Project in File Manager"
+      },
+      {
+        "command": "extension.openFileInFileManager",
+        "title": "Open File in File Manager",
+        "icon": "$(file-symlink-file)"
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.openFileInFileManager",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
