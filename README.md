@@ -22,4 +22,8 @@ Add a button to open file manager (finder, file explorer) on the status bar and 
 <img src="https://github.com/13ruceYu/vscode-open-in-file-manager/blob/main/res/demo2.gif?raw=true" alt="demo">
 </p>
 
+## Acknowledgements
+
+<https://github.com/antfu/vscode-open-in-github-button>
+
 **Enjoy!**
