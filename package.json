@@ -2,7 +2,7 @@
   "name": "open-in-file-manager",
   "displayName": "Open in File Manager",
   "description": "Add a button to open file manager (finder, file explorer) on the status bar",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "author": "Bruce Yu <bruceyuhongbo@gmail.com>",
   "publisher": "bruceyuhb",
   "homepage": "https://github.com/13ruceYu/vscode-open-in-file-manager#readme",
@@ -12,6 +12,9 @@
   },
   "icon": "res/icon.png",
   "license": "MIT",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
   "categories": [
     "Other"
   ],
